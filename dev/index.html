@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name='referrer' content='no-referrer'/>
+  <title>eyup@losa.dev:~$ </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.scss">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .loading-text {
+      color: rgb(155, 0, 0);
+      font-size: 2vw; /* Responsive font size based on viewport width */
+      white-space: pre-wrap; /* Preserve whitespace and wrap lines */
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .container {
+      display: none; /* Hide the container initially */
+    }
+
+    @media only screen and (max-width: 768px) {
+      /* Adjust styles for smaller screens if needed */
+      .loading-text {
+        font-size: 2vw; /* Adjust font size for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="loading-text">
+      <pre>
+
+        ██▓     ▒█████    ██████  ▄▄▄           ▓█████▄ ▓█████ ██▒   █▓
+        ▓██▒    ▒██▒  ██▒▒██    ▒ ▒████▄         ▒██▀ ██▌▓█   ▀▓██░   █▒
+        ▒██░    ▒██░  ██▒░ ▓██▄   ▒██  ▀█▄       ░██   █▌▒███   ▓██  █▒░
+        ▒██░    ▒██   ██░  ▒   ██▒░██▄▄▄▄██      ░▓█▄   ▌▒▓█  ▄  ▒██ █░░
+        ░██████▒░ ████▓▒░▒██████▒▒ ▓█   ▓██▒ ██▓ ░▒████▓ ░▒████▒  ▒▀█░  
+        ░ ▒░▓  ░░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░ ▒▒   ▓▒█░ ▒▓▒  ▒▒▓  ▒ ░░ ▒░ ░  ░ ▐░  
+        ░ ░ ▒  ░  ░ ▒ ▒░ ░ ░▒  ░ ░  ▒   ▒▒ ░ ░▒   ░ ▒  ▒  ░ ░  ░  ░ ░░  
+          ░ ░   ░ ░ ░ ▒  ░  ░  ░    ░   ▒    ░    ░ ░  ░    ░       ░░  
+            ░  ░    ░ ░        ░        ░  ░  ░     ░       ░  ░     ░  
+                                              ░   ░                 ░           
+      </pre>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="video-background">
+      <iframe allowtransparency="true" class="matrix" src="https://sumitkcs.github.io/matrix-effect/"></iframe>
+      <h1 class="losadev">losa.dev</h1>
+      <div class="subtitle">desktop app developer</div>
+      <div class="video-foreground">
+        <div id="ytplayer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script>
+    // Simulate a delay for demonstration purposes (you can remove this in production)
+    setTimeout(function() {
+      document.getElementById('loading-screen').style.display = 'none';
+      document.querySelector('.container').style.display = 'block';
+    }, 1600); // Change 3000 to your desired loading time in milliseconds
+  </script>
+</body>
+</html>
