@@ -7,13 +7,20 @@ function onYouTubePlayerAPIReady() {
     player = new YT.Player('ytplayer', {
         height: '1080',
         width: '1920',
-        videoId: 'edbY11BX4Xw'
+        videoId: 'edbY11BX4Xw',
         playerVars: {
             'autoplay': 1,
-            'showinfo': 0,
             'controls': 0,
+            'showinfo': 0,
             'loop': 1,
+            'playlist': 'edbY11BX4Xw',
             'iv_load_policy': 3
+        },
+        events: {
+            'onReady': onPlayerReady
         }
     });
+}
+function onPlayerReady(event) {
+    event.target.playVideo();
 }
